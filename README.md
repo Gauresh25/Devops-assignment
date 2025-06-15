@@ -128,7 +128,7 @@ For local development - spins up everything with one command. It is cleaner than
 
 ## Environment Variables
 - `S3_BUCKET_NAME`: Your S3 bucket name
-- `AWS_REGION`: AWS region (I used us-east-1)
+- `AWS_REGION`: AWS region (I used ap-south-1)
 
 ## Quick Troubleshooting
 - **Can't access app**: Check security groups allow port 80
