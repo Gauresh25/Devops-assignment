@@ -1,0 +1,14 @@
+#cloud-config
+
+packages:
+  - docker.io
+  - git
+
+runcmd:
+  - systemctl start docker
+  - usermod -aG docker ubuntu
+  - cd /home/ubuntu
+  - git clone https://github.com/Gauresh25/Devops-assignment.git app
+  - cd app
+  - docker build -t gauresh-app .
+  - docker run -d --name gauresh-app -p 80:5000 -e S3_BUCKET_NAME=gauresh-assignment gauresh-app
