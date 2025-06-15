@@ -6,6 +6,13 @@ Live deployed link: http://13.233.146.91/
 
 It's a simple web application that connects to my S3 bucket and lets you view and download files (currently I have my resume hosted there). The functionality is basic but we can make it easily scalable to add file upload logic and make it a full fledged cloud drive. I went with Flask because it's lightweight and perfect for this kind of project.
 
+Bonus deliverables:
+- **IAM roles** for secure access to S3 buckets
+- **Deploy.sh** scripts to automate deployment commands
+- **Cloud-init** file to quickly get an EC2 up and running
+- **Docker-compose** for future scalability and container orchestration
+- **DockerHub** used as container registry
+
 ## Quick Demo
 
 **Local Testing Screenshot:**
