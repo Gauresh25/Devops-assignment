@@ -9,7 +9,7 @@ It's a simple web application that connects to my S3 bucket and lets you view an
 ## Quick Demo
 
 **Local Testing Screenshot:**
-*[Screenshot: App running locally in Docker container - http://localhost:5000]*
+*[Screenshot: App running locally in Docker container - http://localhost:5000 left window: docker container runnning in CLI,right: containerized application locally]*
 
 ![Local Docker Screenshot](screenshots/local-docker.jpg)
 ![Local Docker Screenshot](screenshots/local-docker1.jpg)
@@ -72,25 +72,15 @@ docker run -p 80:5000 \
 ### AWS Setup
 
 **IAM Role for EC2:**
+I have created an IAM role for he EC2 allowing access to the S3 bucket
 
-# Attach S3 policy
-aws iam attach-role-policy \
-  --role-name GaureshS3Role \
-  --policy-arn arn:aws:iam::aws:policy/AmazonS3ReadOnlyAccess
-```
+**S3 setup **
+We have created a simple s3 bucket that our application will be able to access and list out all files alloing us to download them
 
-### EC2 Deployment
+**EC2 setup **
+An EC2 instance is used to deploy and run the application over the internet
 
-**Deploy App:**
-```bash
-ssh -i your-key.pem ubuntu@your-ec2-ip
-git clone https://github.com/your-username/gauresh-devops-assignment.git
-cd gauresh-devops-assignment
-./deploy.sh
-```
 
-### S3 setup
-we have created a simple s3 bucket that our application will be able to access and list out all files alloing us to download them
 ## The Automation Stuff
 
 ### deploy.sh
@@ -132,6 +122,11 @@ For local development - spins up everything with one command. It is cleaner than
 - **Can't access app**: Check security groups allow port 80
 - **S3 errors**: Verify IAM role is attached to EC2
 - **Docker issues**: Make sure user is in docker group
+
+## Challenges faced
+
+-Local issues with docker desktop: I had to face issues while getting docker running on windows this was likely an issue with the gui binaries, 
+  Resolution:I could have reinstalled docker gui on my Windows boot, however due to time contraints i preferrred switching over to a Linux environment, I had docker up and running there and i used CLI to setup entirity of the application
 
 ## Assignment Deliverables Checklist
 - [x] GitHub repository with all code
