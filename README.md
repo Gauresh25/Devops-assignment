@@ -1,5 +1,6 @@
 # Devops-assignment
 Hey! This is my DevOps intern assignment where I built a Flask app that reads files from AWS S3, containerized it with Docker, and deployed it on EC2.
+Live deployed link: http://13.233.146.91/
 
 ## What This App Does
 
@@ -34,6 +35,8 @@ Note: the S3 access is not alowed in local instance, this is because we use IAM 
 ![Live App](screenshots/live-app.jpg)
 
 link: http://13.233.146.91/
+
+
 Note: the S3 access is enabled in the deployed version via given url, this happens because the EC2 has an attached policy allowing S3 access
 
 ## How I Built This
