@@ -1,0 +1,35 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="container">
+    <h2>Files in S3 Bucket: {{ bucket }}</h2>
+    
+    {% if files %}
+        <div class="file-list">
+            {% for file in files %}
+                <div class="file-item">
+                    <span class="filename">{{ file }}</span>
+                    <div class="file-actions">
+                        <a href="{{ url_for('view_file', filename=file) }}" class="btn btn-view" target="_blank">View</a>
+                        <a href="{{ url_for('download_file', filename=file) }}" class="btn btn-download">Download</a>
+                    </div>
+                </div>
+            {% endfor %}
+        </div>
+    {% else %}
+        <div class="no-files">
+            <p>No files found in the S3 bucket.</p>
+            <p>Make sure your bucket name is configured correctly and contains files.</p>
+        </div>
+    {% endif %}
+    
+    <div class="info">
+        <h3>Application Info</h3>
+        <ul>
+            <li>Bucket: {{ bucket }}</li>
+            <li>Status: Connected to AWS S3</li>
+            <li>Features: View and Download files</li>
+        </ul>
+    </div>
+</div>
+{% endblock %}
