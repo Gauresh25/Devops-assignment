@@ -42,14 +42,21 @@ Note: the S3 access is enabled in the deployed version via given url, this happe
 **IAM policy**
 ![image](https://github.com/user-attachments/assets/1601c513-23b2-4a49-805e-fdb0763818e4)
 
+**Docker Hub**
+
+Link: https://hub.docker.com/r/gbagayatkar/gauresh-devops-app
+![image](https://github.com/user-attachments/assets/29eb7dbe-b794-4bcb-a490-4ecdc4df8968)
+
+
 ## How I Built This
 
 ### The Setup
 1. **Flask App**: Simple web interface that lists S3 files
-2. **Docker**: Containerized everything for easy deployment  
-3. **AWS S3**: Storage for my test files
-4. **EC2**: Ubuntu server running the containerized app
-5. **IAM Roles**: Secure access without hardcoded credentials
+2. **Docker**: Containerized everything for easy deployment
+3. **Docker Hub**: Container registry for storing and distributing the app image
+4. **AWS S3**: Storage for my test files
+5. **EC2**: Ubuntu server running the containerized app
+6. **IAM Roles**: Secure access without hardcoded credentials
 
 ### Getting Started Locally
 
@@ -67,6 +74,11 @@ docker run -p 80:5000 \
   -e AWS_ACCESS_KEY_ID=your-key \
   -e AWS_SECRET_ACCESS_KEY=your-secret \
   gauresh-devops-app
+```
+
+Alternatively u can pull the container from my DockerHub profile with:
+```bash
+docker pull gbagayatkar/gauresh-devops-app
 ```
 
 ### AWS Setup
